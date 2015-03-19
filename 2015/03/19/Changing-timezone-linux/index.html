@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Eric Maicon</title>
+  <title>Changing timezone linux | Eric Maicon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A backend developer who lives in Goiânia - Brazil and love challenge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eric Maicon">
-<meta property="og:url" content="http://ericmaicon.com.br/categories/Sublime-Text/index.html">
+  <meta name="description" content="Sometimes you need to change your linux machine date/time and a simple date function does not work. To change the timezone, you should edit your timezone file, change to your timezone area and then, r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Changing timezone linux">
+<meta property="og:url" content="http://ericmaicon.com.br/2015/03/19/Changing-timezone-linux/index.html">
 <meta property="og:site_name" content="Eric Maicon">
-<meta property="og:description" content="A backend developer who lives in Goiânia - Brazil and love challenge">
+<meta property="og:description" content="Sometimes you need to change your linux machine date/time and a simple date function does not work. To change the timezone, you should edit your timezone file, change to your timezone area and then, r">
+<meta property="og:image" content="/thumbnails/linux.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric Maicon">
-<meta name="twitter:description" content="A backend developer who lives in Goiânia - Brazil and love challenge">
+<meta name="twitter:title" content="Changing timezone linux">
+<meta name="twitter:description" content="Sometimes you need to change your linux machine date/time and a simple date function does not work. To change the timezone, you should edit your timezone file, change to your timezone area and then, r">
 
   
   
@@ -101,60 +102,54 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-category"></i>category : <em class="page-title-link">Sublime Text</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/Linux/">Linux</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-Changing-timezone-linux" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/02/16/Sublime-text-3-key-bindings/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span style="background-image:url(/thumbnails/sublime.jpg
-)" alt="Sublime text 3 key bindings" class="thumbnail-image"></span>
+    <h1 class="article-title" itemprop="name">
+      Changing timezone linux
+    </h1>
   
 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/03/19/Changing-timezone-linux/" class="article-date">
+  <time datetime="2015-03-19T17:27:59.000Z" itemprop="datePublished">19/03/2015</time>
 </a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Sublime-Text/">Sublime Text</a></p>
-        <p class="date"><time datetime="2015-02-17T00:57:51.000Z" itemprop="datePublished">16/02/2015</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/02/16/Sublime-text-3-key-bindings/" class="title">Sublime text 3 key bindings</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-It is so hard to find an IDE that works with all keybinds that you want to. I never get used to with eclipse, netbeans, PHPStorm and others IDE keybinds. When I started to use Sublime Text, I found a
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/thumbnails/linux.jpg" alt="Linux"></p>
+<p>Sometimes you need to change your linux machine date/time and a simple date function does not work. To change the timezone, you should edit your timezone file, change to your timezone area and then, run a command to validate it.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+</pre></td><td class="code"><pre><span class="line">vim /etc/timezone</span>
+<span class="line"><span class="comment">#Insert your timezone: e.g. America/Sao_Paulo</span></span>
+<span class="line"></span>
+<span class="line">dpkg-reconfigure --frontend noninteractive tzdata</span>
+</pre></td></tr></table></figure>
+<p>Source:<br><a href="http://odesenvolvedor.andafter.org/publicacoes/alterando-a-timezone-do-ubuntu-pelo-terminal-2.html" target="_blank" rel="external">http://odesenvolvedor.andafter.org/publicacoes/alterando-a-timezone-do-ubuntu-pelo-terminal-2.html</a></p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://ericmaicon.com.br/2015/03/19/Changing-timezone-linux/" data-id="ci7gq3flp000xmcl05mm0l9lp" class="article-share-link">Share</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-
-
 
             </div>
           </section>
@@ -174,6 +169,19 @@ It is so hard to find an IDE that works with all keybinds that you want to. I ne
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/03/19/Script-to-start-a-virtualbox-with-tunnel-ssh/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Script to start a virtualbox with tunnel SSH</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     

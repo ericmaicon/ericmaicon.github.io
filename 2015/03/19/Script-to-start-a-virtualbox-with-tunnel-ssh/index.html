@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Eric Maicon</title>
+  <title>Script to start a virtualbox with tunnel SSH | Eric Maicon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A backend developer who lives in Goiânia - Brazil and love challenge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eric Maicon">
-<meta property="og:url" content="http://ericmaicon.com.br/categories/Sublime-Text/index.html">
+  <meta name="description" content="When you are not using Vagrant, you may need to start your machine by command line and instead of use port forward (some systems does not allow to forward port 80 for example), you can use Tunnel SSH.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Script to start a virtualbox with tunnel SSH">
+<meta property="og:url" content="http://ericmaicon.com.br/2015/03/19/Script-to-start-a-virtualbox-with-tunnel-ssh/index.html">
 <meta property="og:site_name" content="Eric Maicon">
-<meta property="og:description" content="A backend developer who lives in Goiânia - Brazil and love challenge">
+<meta property="og:description" content="When you are not using Vagrant, you may need to start your machine by command line and instead of use port forward (some systems does not allow to forward port 80 for example), you can use Tunnel SSH.">
+<meta property="og:image" content="/thumbnails/virtualbox.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric Maicon">
-<meta name="twitter:description" content="A backend developer who lives in Goiânia - Brazil and love challenge">
+<meta name="twitter:title" content="Script to start a virtualbox with tunnel SSH">
+<meta name="twitter:description" content="When you are not using Vagrant, you may need to start your machine by command line and instead of use port forward (some systems does not allow to forward port 80 for example), you can use Tunnel SSH.">
 
   
   
@@ -101,60 +102,73 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-category"></i>category : <em class="page-title-link">Sublime Text</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/Virtualbox/">Virtualbox</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-Script-to-start-a-virtualbox-with-tunnel-ssh" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/02/16/Sublime-text-3-key-bindings/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span style="background-image:url(/thumbnails/sublime.jpg
-)" alt="Sublime text 3 key bindings" class="thumbnail-image"></span>
+    <h1 class="article-title" itemprop="name">
+      Script to start a virtualbox with tunnel SSH
+    </h1>
   
 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/03/19/Script-to-start-a-virtualbox-with-tunnel-ssh/" class="article-date">
+  <time datetime="2015-03-19T17:27:45.000Z" itemprop="datePublished">19/03/2015</time>
 </a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Sublime-Text/">Sublime Text</a></p>
-        <p class="date"><time datetime="2015-02-17T00:57:51.000Z" itemprop="datePublished">16/02/2015</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/02/16/Sublime-text-3-key-bindings/" class="title">Sublime text 3 key bindings</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-It is so hard to find an IDE that works with all keybinds that you want to. I never get used to with eclipse, netbeans, PHPStorm and others IDE keybinds. When I started to use Sublime Text, I found a
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/thumbnails/virtualbox.jpg" alt="Virtualbox"></p>
+<p>When you are not using Vagrant, you may need to start your machine by command line and instead of use port forward (some systems does not allow to forward port 80 for example), you can use Tunnel SSH.</p>
+<p>To do so, you can use the script below:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+</pre></td><td class="code"><pre><span class="line"><span class="shebang">#! /bin/sh</span>
+<span class="line"></span></span>
+<span class="line"><span class="comment">#killing the ssh tunnel ports</span></span>
+<span class="line">sudo <span class="built_in">kill</span> -<span class="number">9</span> `ps -ef | grep ssh | grep -v grep | awk <span class="string">'&#123;print $2&#125;'</span>`</span>
+<span class="line">rm <span class="operator">-f</span> socket-*</span>
+<span class="line"></span>
+<span class="line"><span class="comment">#Starting the machine</span></span>
+<span class="line">VBoxManage startvm YOUR_MACHINE_NAME --type headless</span>
+<span class="line"></span>
+<span class="line"><span class="comment">#Creating all tunnel SSH</span></span>
+<span class="line">sudo ssh -M -S socket-web -fnNT -L <span class="number">80</span>:localhost:<span class="number">80</span> root@<span class="number">10.10</span>.<span class="number">5.15</span></span>
+<span class="line">sudo ssh -M -S socket-mysql -fnNT -L <span class="number">3306</span>:localhost:<span class="number">3306</span> root@<span class="number">10.10</span>.<span class="number">5.15</span></span>
+<span class="line">sudo ssh -M -S socket-mongo -fnNT -L <span class="number">27017</span>:localhost:<span class="number">27017</span> root@<span class="number">10.10</span>.<span class="number">5.15</span></span>
+<span class="line">sudo ssh -M -S socket-xdebug -fnNT -L <span class="number">9000</span>:localhost:<span class="number">9000</span> root@<span class="number">10.10</span>.<span class="number">5.15</span></span>
+</pre></td></tr></table></figure>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://ericmaicon.com.br/2015/03/19/Script-to-start-a-virtualbox-with-tunnel-ssh/" data-id="ci7gq3fl9000cmcl001ut454t" class="article-share-link">Share</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Virtualbox/">Virtualbox</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
-      </div>
-    
   
-  
-    </div></section>
-  
-
-
 
             </div>
           </section>
@@ -174,6 +188,29 @@ It is so hard to find an IDE that works with all keybinds that you want to. I ne
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/19/Changing-timezone-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          Changing timezone linux
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2015/02/16/Sublime-text-3-key-bindings/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Sublime text 3 key bindings</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
