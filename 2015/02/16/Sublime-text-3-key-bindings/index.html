@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sublime text 3 key bindings | Eric Maicon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="It is so hard to find an IDE that works with all keybinds that you want to. I never get used to with eclipse, netbeans, PHPStorm and others IDE keybinds. When I started to use Sublime Text, I found a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime text 3 key bindings">
+<meta property="og:url" content="http://ericmaicon.com.br/2015/02/16/Sublime-text-3-key-bindings/index.html">
+<meta property="og:site_name" content="Eric Maicon">
+<meta property="og:description" content="It is so hard to find an IDE that works with all keybinds that you want to. I never get used to with eclipse, netbeans, PHPStorm and others IDE keybinds. When I started to use Sublime Text, I found a">
+<meta property="og:image" content="/thumbnails/sublime.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime text 3 key bindings">
+<meta name="twitter:description" content="It is so hard to find an IDE that works with all keybinds that you want to. I never get used to with eclipse, netbeans, PHPStorm and others IDE keybinds. When I started to use Sublime Text, I found a">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+
+  
+  
+
+
+  
+    <style type="text/css">
+      .logo { background-image:url(http://ppoffice.github.io/hexo-theme-hueman/css/images/logo-header.png); }
+    </style>
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://ericmaicon.com.br"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/Sublime-Text/">Sublime Text</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-Sublime-text-3-key-bindings" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Sublime text 3 key bindings
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/02/16/Sublime-text-3-key-bindings/" class="article-date">
+  <time datetime="2015-02-17T00:57:51.000Z" itemprop="datePublished">16/02/2015</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/thumbnails/sublime.jpg" alt="Sublime Text"></p>
+<p>It is so hard to find an IDE that works with all keybinds that you want to. I never get used to with eclipse, netbeans, PHPStorm and others IDE keybinds. When I started to use Sublime Text, I found a simple way to configure and customize it. So, here it goes my custom key bindings:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+<span class="line">27</span>
+<span class="line">28</span>
+<span class="line">29</span>
+<span class="line">30</span>
+<span class="line">31</span>
+<span class="line">32</span>
+<span class="line">33</span>
+<span class="line">34</span>
+<span class="line">35</span>
+<span class="line">36</span>
+<span class="line">37</span>
+<span class="line">38</span>
+<span class="line">39</span>
+<span class="line">40</span>
+<span class="line">41</span>
+<span class="line">42</span>
+<span class="line">43</span>
+<span class="line">44</span>
+<span class="line">45</span>
+<span class="line">46</span>
+<span class="line">47</span>
+<span class="line">48</span>
+<span class="line">49</span>
+<span class="line">50</span>
+<span class="line">51</span>
+<span class="line">52</span>
+<span class="line">53</span>
+<span class="line">54</span>
+<span class="line">55</span>
+<span class="line">56</span>
+<span class="line">57</span>
+<span class="line">58</span>
+<span class="line">59</span>
+<span class="line">60</span>
+<span class="line">61</span>
+<span class="line">62</span>
+<span class="line">63</span>
+<span class="line">64</span>
+<span class="line">65</span>
+<span class="line">66</span>
+<span class="line">67</span>
+<span class="line">68</span>
+<span class="line">69</span>
+<span class="line">70</span>
+<span class="line">71</span>
+<span class="line">72</span>
+<span class="line">73</span>
+<span class="line">74</span>
+<span class="line">75</span>
+<span class="line">76</span>
+<span class="line">77</span>
+<span class="line">78</span>
+<span class="line">79</span>
+<span class="line">80</span>
+<span class="line">81</span>
+<span class="line">82</span>
+<span class="line">83</span>
+<span class="line">84</span>
+<span class="line">85</span>
+<span class="line">86</span>
+<span class="line">87</span>
+<span class="line">88</span>
+<span class="line">89</span>
+<span class="line">90</span>
+<span class="line">91</span>
+<span class="line">92</span>
+<span class="line">93</span>
+<span class="line">94</span>
+<span class="line">95</span>
+<span class="line">96</span>
+<span class="line">97</span>
+<span class="line">98</span>
+<span class="line">99</span>
+<span class="line">100</span>
+<span class="line">101</span>
+<span class="line">102</span>
+<span class="line">103</span>
+<span class="line">104</span>
+<span class="line">105</span>
+<span class="line">106</span>
+<span class="line">107</span>
+<span class="line">108</span>
+<span class="line">109</span>
+<span class="line">110</span>
+<span class="line">111</span>
+<span class="line">112</span>
+<span class="line">113</span>
+<span class="line">114</span>
+<span class="line">115</span>
+<span class="line">116</span>
+<span class="line">117</span>
+<span class="line">118</span>
+<span class="line">119</span>
+<span class="line">120</span>
+<span class="line">121</span>
+<span class="line">122</span>
+<span class="line">123</span>
+<span class="line">124</span>
+<span class="line">125</span>
+<span class="line">126</span>
+<span class="line">127</span>
+<span class="line">128</span>
+<span class="line">129</span>
+<span class="line">130</span>
+<span class="line">131</span>
+<span class="line">132</span>
+<span class="line">133</span>
+<span class="line">134</span>
+<span class="line">135</span>
+<span class="line">136</span>
+<span class="line">137</span>
+<span class="line">138</span>
+<span class="line">139</span>
+<span class="line">140</span>
+<span class="line">141</span>
+<span class="line">142</span>
+<span class="line">143</span>
+<span class="line">144</span>
+<span class="line">145</span>
+<span class="line">146</span>
+<span class="line">147</span>
+<span class="line">148</span>
+<span class="line">149</span>
+<span class="line">150</span>
+<span class="line">151</span>
+<span class="line">152</span>
+<span class="line">153</span>
+<span class="line">154</span>
+<span class="line">155</span>
+<span class="line">156</span>
+<span class="line">157</span>
+<span class="line">158</span>
+<span class="line">159</span>
+<span class="line">160</span>
+<span class="line">161</span>
+<span class="line">162</span>
+<span class="line">163</span>
+<span class="line">164</span>
+<span class="line">165</span>
+<span class="line">166</span>
+<span class="line">167</span>
+<span class="line">168</span>
+<span class="line">169</span>
+<span class="line">170</span>
+<span class="line">171</span>
+<span class="line">172</span>
+<span class="line">173</span>
+<span class="line">174</span>
+<span class="line">175</span>
+<span class="line">176</span>
+<span class="line">177</span>
+<span class="line">178</span>
+<span class="line">179</span>
+<span class="line">180</span>
+<span class="line">181</span>
+<span class="line">182</span>
+<span class="line">183</span>
+<span class="line">184</span>
+<span class="line">185</span>
+<span class="line">186</span>
+<span class="line">187</span>
+<span class="line">188</span>
+<span class="line">189</span>
+<span class="line">190</span>
+<span class="line">191</span>
+<span class="line">192</span>
+<span class="line">193</span>
+<span class="line">194</span>
+<span class="line">195</span>
+<span class="line">196</span>
+<span class="line">197</span>
+<span class="line">198</span>
+<span class="line">199</span>
+<span class="line">200</span>
+<span class="line">201</span>
+<span class="line">202</span>
+<span class="line">203</span>
+<span class="line">204</span>
+<span class="line">205</span>
+<span class="line">206</span>
+<span class="line">207</span>
+<span class="line">208</span>
+<span class="line">209</span>
+<span class="line">210</span>
+<span class="line">211</span>
+<span class="line">212</span>
+<span class="line">213</span>
+<span class="line">214</span>
+<span class="line">215</span>
+<span class="line">216</span>
+<span class="line">217</span>
+<span class="line">218</span>
+<span class="line">219</span>
+<span class="line">220</span>
+<span class="line">221</span>
+<span class="line">222</span>
+<span class="line">223</span>
+<span class="line">224</span>
+<span class="line">225</span>
+<span class="line">226</span>
+<span class="line">227</span>
+<span class="line">228</span>
+<span class="line">229</span>
+<span class="line">230</span>
+<span class="line">231</span>
+<span class="line">232</span>
+<span class="line">233</span>
+<span class="line">234</span>
+<span class="line">235</span>
+<span class="line">236</span>
+<span class="line">237</span>
+<span class="line">238</span>
+<span class="line">239</span>
+<span class="line">240</span>
+<span class="line">241</span>
+<span class="line">242</span>
+<span class="line">243</span>
+<span class="line">244</span>
+<span class="line">245</span>
+<span class="line">246</span>
+<span class="line">247</span>
+<span class="line">248</span>
+<span class="line">249</span>
+<span class="line">250</span>
+<span class="line">251</span>
+<span class="line">252</span>
+<span class="line">253</span>
+<span class="line">254</span>
+<span class="line">255</span>
+<span class="line">256</span>
+<span class="line">257</span>
+<span class="line">258</span>
+<span class="line">259</span>
+<span class="line">260</span>
+<span class="line">261</span>
+<span class="line">262</span>
+<span class="line">263</span>
+<span class="line">264</span>
+<span class="line">265</span>
+<span class="line">266</span>
+<span class="line">267</span>
+<span class="line">268</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span>
+<span class="line">sublime.log_commands(True)</span>
+<span class="line">*/</span></span>
+<span class="line">[</span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  abre os arquivos</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"shift+command+r"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"show_overlay"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"overlay"</span>: <span class="string">"goto"</span>,</span>
+<span class="line">        <span class="string">"show_files"</span>: <span class="literal">true</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  maiúsculo/minúsculo</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"shift+command+x"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"upper_case"</span></span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"shift+command+j"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"lower_case"</span></span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  importar classes</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"shift+command+i"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"find_use"</span></span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  Definição da classe</span>
+<span class="line">   */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"f3"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"goto_definition_scope"</span></span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  pesquisa</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"command+f"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"show_panel"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"panel"</span>: <span class="string">"replace"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  </span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"command+t"</span>],</span>
+<span class="line">     <span class="string">"command"</span> : <span class="string">"run_multiple_commands"</span>,</span>
+<span class="line">      <span class="string">"args"</span> : &#123;</span>
+<span class="line">          <span class="string">"commands"</span> : [</span>
+<span class="line">              &#123;</span>
+<span class="line">                  <span class="string">"command"</span> : <span class="string">"trim"</span>,</span>
+<span class="line">                  <span class="string">"context"</span>: <span class="string">"window"</span></span>
+<span class="line">              &#125;,</span>
+<span class="line">              &#123;</span>
+<span class="line">                  <span class="string">"command"</span> : <span class="string">"trim_edges"</span>,</span>
+<span class="line">                  <span class="string">"context"</span>: <span class="string">"window"</span></span>
+<span class="line">              &#125;</span>
+<span class="line">          ]</span>
+<span class="line">      &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"command+h"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"find_in_folder"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"dirs"</span>: [<span class="string">""</span>]</span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  fechar pagina</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"command+w"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"close"</span></span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  vai para a linha</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+g"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"show_overlay"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"overlay"</span>: <span class="string">"goto"</span>, </span>
+<span class="line">        <span class="string">"text"</span>: <span class="string">":"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  lista de métodos</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>:[<span class="string">"command+o"</span>],</span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"show_overlay"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"overlay"</span>: <span class="string">"goto"</span>, </span>
+<span class="line">        <span class="string">"text"</span>: <span class="string">"@"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*início e fim da linha*/</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"option+left"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"hardbol"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"option+right"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"hardeol"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"option+shift+left"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"hardbol"</span>,</span>
+<span class="line">        <span class="string">"extend"</span>: <span class="literal">true</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"option+shift+right"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"hardeol"</span>, </span>
+<span class="line">        <span class="string">"extend"</span>: <span class="literal">true</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*início e fim da palavra*/</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+left"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"bol"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+right"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"eol"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+shift+left"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"bol"</span>,</span>
+<span class="line">        <span class="string">"extend"</span>: <span class="literal">true</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+shift+right"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"move_to"</span>,</span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"to"</span>: <span class="string">"eol"</span>, </span>
+<span class="line">        <span class="string">"extend"</span>: <span class="literal">true</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  abas</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"control+shift+tab"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"prev_view_in_stack"</span> </span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"control+tab"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"next_view_in_stack"</span></span>
+<span class="line">  &#125;,</span>
+<span class="line">  </span>
+<span class="line">  <span class="comment">/*início e fim do documento*/</span></span>
+<span class="line">  &#123;</span>
+<span class="line">    <span class="string">"keys"</span>: [<span class="string">"command+up"</span>], </span>
+<span class="line">    <span class="string">"command"</span>: <span class="string">"move_to"</span>, </span>
+<span class="line">    <span class="string">"args"</span>: &#123;</span>
+<span class="line">      <span class="string">"to"</span>: <span class="string">"bof"</span></span>
+<span class="line">    &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123;</span>
+<span class="line">    <span class="string">"keys"</span>: [<span class="string">"command+down"</span>], </span>
+<span class="line">    <span class="string">"command"</span>: <span class="string">"move_to"</span>, </span>
+<span class="line">    <span class="string">"args"</span>: &#123;</span>
+<span class="line">      <span class="string">"to"</span>: <span class="string">"eof"</span></span>
+<span class="line">    &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  deletar linhas</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+d"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"run_macro_file"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"file"</span>: <span class="string">"Packages/Default/Delete Line.sublime-macro"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*</span>
+<span class="line">  comentários</span>
+<span class="line">  */</span></span>
+<span class="line">  &#123; </span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"shift+command+c"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"toggle_comment"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123; </span>
+<span class="line">        <span class="string">"block"</span>: <span class="literal">false</span> </span>
+<span class="line">     &#125; </span>
+<span class="line">  &#125;,</span>
+<span class="line">  &#123; </span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"shift+command+t"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"toggle_comment"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123; </span>
+<span class="line">        <span class="string">"block"</span>: <span class="literal">true</span> </span>
+<span class="line">     &#125; </span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">/*snnipets*/</span></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+1"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"insert"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"characters"</span>: <span class="string">"&lt;?php"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+2"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"insert"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"characters"</span>: <span class="string">"&lt;%= %&gt;"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+3"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"insert_snippet"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"name"</span>: <span class="string">"Packages/User/console_log.sublime-snippet"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;,</span>
+<span class="line"></span>
+<span class="line">  &#123;</span>
+<span class="line">     <span class="string">"keys"</span>: [<span class="string">"command+4"</span>], </span>
+<span class="line">     <span class="string">"command"</span>: <span class="string">"insert_snippet"</span>, </span>
+<span class="line">     <span class="string">"args"</span>: &#123;</span>
+<span class="line">        <span class="string">"name"</span>: <span class="string">"Packages/User/var_dump.sublime-snippet"</span></span>
+<span class="line">     &#125;</span>
+<span class="line">  &#125;</span>
+<span class="line">]</span>
+</pre></td></tr></table></figure>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://ericmaicon.com.br/2015/02/16/Sublime-text-3-key-bindings/" data-id="ci7f1r82600025xl0h2j7ht2n" class="article-share-link">Share</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>follow:</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/eric_maicon"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/eric.maicon.3"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="https://plus.google.com/u/0/+EricMaicon"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/ericmaicon"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/02/16/Updating-npm-on-a-Mac/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Updating npm on a Mac</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Presta-Shop/">Presta Shop</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime-Text/">Sublime Text</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a><a href="/tags/Node/" style="font-size: 10px;">Node</a><a href="/tags/Presta-Shop/" style="font-size: 20px;">Presta Shop</a><a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Eric Maicon</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

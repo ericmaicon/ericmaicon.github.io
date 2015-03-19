@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SQL to export Products from Presta shop 1.3.* to CSV with categories and images | Eric Maicon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A customer requested from me to update his Presta shop version. Since he had a old version, it was not possible. So I needed to install a new version and import everything from one to another. To do s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL to export Products from Presta shop 1.3.* to CSV with categories and images">
+<meta property="og:url" content="http://ericmaicon.com.br/2015/02/16/SQL-to-export-Products-from-Presta-shop-1-3-to-CSV-with-categories-and-images/index.html">
+<meta property="og:site_name" content="Eric Maicon">
+<meta property="og:description" content="A customer requested from me to update his Presta shop version. Since he had a old version, it was not possible. So I needed to install a new version and import everything from one to another. To do s">
+<meta property="og:image" content="/thumbnails/prestashop.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL to export Products from Presta shop 1.3.* to CSV with categories and images">
+<meta name="twitter:description" content="A customer requested from me to update his Presta shop version. Since he had a old version, it was not possible. So I needed to install a new version and import everything from one to another. To do s">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+
+  
+  
+
+
+  
+    <style type="text/css">
+      .logo { background-image:url(http://ppoffice.github.io/hexo-theme-hueman/css/images/logo-header.png); }
+    </style>
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">Home</a></li>
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">About</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="q" value="site:http://ericmaicon.com.br"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/categories/Presta-Shop/">Presta Shop</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-SQL-to-export-Products-from-Presta-shop-1-3-to-CSV-with-categories-and-images" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      SQL to export Products from Presta shop 1.3.* to CSV with categories and images
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/02/16/SQL-to-export-Products-from-Presta-shop-1-3-to-CSV-with-categories-and-images/" class="article-date">
+  <time datetime="2015-02-17T00:56:40.000Z" itemprop="datePublished">16/02/2015</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/thumbnails/prestashop.jpg" alt="Presta Shop"></p>
+<p>A customer requested from me to update his Presta shop version. Since he had a old version, it was not possible. So I needed to install a new version and import everything from one to another. To do so, I did this SQL. It may be useful to you, feel free to use it:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+<span class="line">27</span>
+<span class="line">28</span>
+<span class="line">29</span>
+<span class="line">30</span>
+<span class="line">31</span>
+<span class="line">32</span>
+<span class="line">33</span>
+<span class="line">34</span>
+<span class="line">35</span>
+<span class="line">36</span>
+</pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">SELECT</span> ps_product.id_product <span class="keyword">as</span> id,</span>
+<span class="line">       <span class="keyword">replace</span>(ps_product_lang.name, <span class="string">'"'</span>,<span class="string">''''</span>) <span class="keyword">as</span> nome,</span>
+<span class="line">       <span class="keyword">ifnull</span>((<span class="keyword">select</span> ps_category_lang.name</span>
+<span class="line">          <span class="keyword">from</span> ps_category</span>
+<span class="line">          <span class="keyword">join</span> ps_category_lang <span class="keyword">on</span> ps_category_lang.id_category = ps_category.id_category</span>
+<span class="line">                               <span class="keyword">and</span> ps_category_lang.id_lang = <span class="number">3</span></span>
+<span class="line">          <span class="keyword">join</span> ps_category_product <span class="keyword">on</span> ps_category_product.id_category = ps_category.id_category</span>
+<span class="line">         <span class="keyword">where</span> ps_category_product.id_product = ps_product.id_product</span>
+<span class="line">         <span class="keyword">limit</span> <span class="number">1</span>),<span class="string">''</span>) <span class="keyword">as</span> categoria,</span>
+<span class="line">       ps_product.price <span class="keyword">as</span> preco_atacado,</span>
+<span class="line">       ps_product.reduction_price <span class="keyword">as</span> qtde_desconto,</span>
+<span class="line">       ps_product.reduction_percent <span class="keyword">as</span> percentual_desconto,</span>
+<span class="line">       ps_product.reduction_from <span class="keyword">as</span> desconto_de,</span>
+<span class="line">       ps_product.reduction_to <span class="keyword">as</span> desconto_ate,</span>
+<span class="line">       ps_product.reference <span class="keyword">as</span> referencia,</span>
+<span class="line">       ps_product.supplier_reference <span class="keyword">as</span> fornecedor_Referencia,</span>
+<span class="line">       <span class="keyword">ifnull</span>(ps_supplier.name, <span class="string">''</span>) <span class="keyword">as</span> fornecedor,</span>
+<span class="line">       <span class="keyword">ifnull</span>(ps_manufacturer.name, <span class="string">''</span>) <span class="keyword">as</span> fabricante,</span>
+<span class="line">       ps_product.weight <span class="keyword">as</span> peso,</span>
+<span class="line">       ps_product.quantity <span class="keyword">as</span> qtde,</span>
+<span class="line">       <span class="keyword">replace</span>(ps_product_lang.description_short, <span class="string">'"'</span>,<span class="string">''''</span>) <span class="keyword">as</span> breve_descricao,</span>
+<span class="line">       <span class="keyword">replace</span>(ps_product_lang.description, <span class="string">'"'</span>,<span class="string">''''</span>) <span class="keyword">as</span> descricao,</span>
+<span class="line">       <span class="keyword">replace</span>(ps_product_lang.meta_title, <span class="string">'"'</span>,<span class="string">''''</span>) <span class="keyword">as</span> meta_titulo,</span>
+<span class="line">       <span class="keyword">replace</span>(ps_product_lang.meta_keywords, <span class="string">'"'</span>,<span class="string">''''</span>) <span class="keyword">as</span> meta_palavra_chave,</span>
+<span class="line">       <span class="keyword">replace</span>(ps_product_lang.meta_description, <span class="string">'"'</span>,<span class="string">''''</span>) <span class="keyword">as</span> meta_descricao,</span>
+<span class="line">       ps_product_lang.link_rewrite <span class="keyword">as</span> url_reescrita,</span>
+<span class="line">       (<span class="keyword">select</span> <span class="keyword">GROUP_CONCAT</span>(<span class="keyword">concat</span>(<span class="string">'http://xxx.com.br/loja/img/p/'</span>, ps_product.id_product, <span class="string">'-'</span> , ps_image.id_image, <span class="string">'.jpg'</span>) SEPARATOR <span class="string">','</span>  )</span>
+<span class="line">          <span class="keyword">from</span> ps_image</span>
+<span class="line">         <span class="keyword">where</span> ps_image.id_product = ps_product.id_product)</span>
+<span class="line"><span class="keyword">FROM</span> ps_product</span>
+<span class="line"><span class="keyword">JOIN</span> ps_product_lang <span class="keyword">ON</span> ps_product_lang.id_product = ps_product.id_product</span>
+<span class="line">                               <span class="keyword">and</span> ps_product_lang.id_lang = <span class="number">3</span></span>
+<span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> ps_supplier <span class="keyword">ON</span> ps_supplier.id_supplier = ps_product.id_supplier</span>
+<span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> ps_manufacturer <span class="keyword">ON</span> ps_manufacturer.id_manufacturer = ps_product.id_manufacturer</span>
+<span class="line"><span class="keyword">WHERE</span> ps_product.active = <span class="number">1</span></span>
+<span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">2</span></span></span>
+</pre></td></tr></table></figure>
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://ericmaicon.com.br/2015/02/16/SQL-to-export-Products-from-Presta-shop-1-3-to-CSV-with-categories-and-images/" data-id="ci7f1r82800035xl0rjhnj246" class="article-share-link">Share</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Presta-Shop/">Presta Shop</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>follow:</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/eric_maicon"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/eric.maicon.3"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="https://plus.google.com/u/0/+EricMaicon"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/ericmaicon"><i id="icon-github" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/16/SQL-To-export-Manufacturer-from-Presta-shop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          SQL To export Manufacturer from Presta shop
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Presta-Shop/">Presta Shop</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime-Text/">Sublime Text</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Java/" style="font-size: 20px;">Java</a><a href="/tags/Node/" style="font-size: 10px;">Node</a><a href="/tags/Presta-Shop/" style="font-size: 20px;">Presta Shop</a><a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Eric Maicon</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
