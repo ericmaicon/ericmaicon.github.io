@@ -133,13 +133,13 @@ ga('send', 'pageview');
       <div class="article-entry" itemprop="articleBody">
         <p><img src="/thumbnails/php.jpg" alt="PHP"></p>
 <p>You may want to choose your exactly PHP configuration and extra components when you are creating a PHP server, right? To do so, the best approach is installing from the source.</p>
-<p>A good advice when you are installing from the source is: **install first all dependencies (MySQL, PostgreSQL, Oracle, mcrypt …) and just after that, you should install the PHP. Why? Because some PHP components use some headers and files from these dependencies, it will avoid an error when the PHP starts to compile.</p>
-<p>I am using a Debian distribution. I tried to use few things from package managment. It may be easy for you to replace the following part to another distribution.</p>
+<p>A good advice when you are installing from the source is: <strong>install first all dependencies</strong> (MySQL, PostgreSQL, Oracle, mcrypt …) and just after that, you should install the PHP. Why? Because some PHP components use some headers and files from these dependencies, it will avoid an error when the PHP starts to compile.</p>
+<p>I am using a Debian distribution. I tried to use few things from package management. It may be easy for you to replace the following part to another distribution.</p>
 <p>Let’s start updating the aptitude and installing the basic requirements:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 </pre></td><td class="code"><pre><span class="line">aptitude update</span>
-<span class="line">aptitude install build-essential libpq-dev libaio-dev libltdl-dev libltdl7</span>
+<span class="line">aptitude install build-essential libaio-dev libltdl-dev libltdl7</span>
 </pre></td></tr></table></figure>
 <p>Now, the step 2 is start to install all dependencies.</p>
 <h3 id="FreeTDS_-_MS_SQL">FreeTDS - MS SQL</h3><p>If you want to work with SQL Server + PHP, you need to install the <a href="http://www.freetds.org/" target="_blank" rel="external">FreeTDS</a> application.</p>
@@ -156,10 +156,10 @@ ga('send', 'pageview');
 <span class="line">./configure --with-tdsver=<span class="number">8.0</span> --enable-msdblib --with-gnu-ld --enable-shared --enable-static --prefix=/usr/<span class="built_in">local</span>/freetds</span>
 <span class="line">make &amp;&amp; make install</span>
 </pre></td></tr></table></figure>
-<h3 id="Instantclient_-_Oracle">Instantclient - Oracle</h3><p>If you want to work with Oracle + PHP, you need to install the instant client for Oracle. There isn’t a good way to download it by wget. To do so, you need to enter in the oracle site, accept the license, and download it.</p>
+<h3 id="Instant_Client_-_Oracle">Instant Client - Oracle</h3><p>If you want to work with Oracle + PHP, you need to install the instant client for Oracle. There isn’t a good way to download it by wget. To do so, you need to enter in the oracle site, accept the license, and download it.</p>
 <ol>
 <li>Open the <a href="http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html" target="_blank" rel="external">Oracle Download Page</a></li>
-<li>Choose the right version of your instant client (It is very important to choose the same architecture of your OS, otherwise you will have error when the PHP starts to comunicate with it):</li>
+<li>Choose the right version of your instant client (It is very important to choose the same architecture of your OS, otherwise you will have error when the PHP starts to communicate with it):</li>
 </ol>
 <p><img src="/images/Installing-Nginx-and-PHP-from-source.png" alt="Instant Client"></p>
 <ol>
@@ -194,8 +194,8 @@ ga('send', 'pageview');
 <span class="line"><span class="built_in">export</span> ORACLE_HOME=/usr/<span class="built_in">local</span>/oracle-client-<span class="number">12</span>-<span class="number">1</span></span>
 <span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/oracle-client-<span class="number">12</span>-<span class="number">1</span></span>
 </pre></td></tr></table></figure>
-<p>At the script above, you need to take care with the name of these files. You may need to check the version that you downloaded and change the file name at the script. Your instant client is ready to work with PHP.</p>
-<h3 id="Ioncube">Ioncube</h3><p>(Ioncube)[<a href="http://www.ioncube.com/" target="_blank" rel="external">http://www.ioncube.com/</a>] is a software that encrypt/decrypt your code. It allows you to send a code to a customer without send the source.</p>
+<p>At the script above, you need to take care with the name of these files. You may need to check the version that you download and change the file name at the script. Your instant client is ready to work with PHP.</p>
+<h3 id="Ioncube">Ioncube</h3><p><a href="http://www.ioncube.com" target="_blank" rel="external">Ioncube</a> is a software that encrypt/decrypt your code. It allows you to send a code to a customer without send the source.</p>
 <p>Your server just need the loader to allow it decrypt those encrypted files:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
@@ -341,13 +341,6 @@ ga('send', 'pageview');
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
 </pre></td><td class="code"><pre><span class="line">./configure  --prefix=/usr/<span class="built_in">local</span>/php \</span>
 <span class="line">             --with-config-file-path=/usr/<span class="built_in">local</span>/php/etc \</span>
 <span class="line">             --with-zlib \</span>
@@ -367,13 +360,13 @@ ga('send', 'pageview');
 <span class="line">             --with-gd \</span>
 <span class="line">             --with-libdir=/lib/x86_64-linux-gnu \</span>
 <span class="line">             --with-mcrypt</span>
-<span class="line"></span>
-<span class="line">**Important notes:**</span>
-<span class="line"></span>
-<span class="line"><span class="number">1</span>. I used a <span class="number">64</span>bits architecture OS. The <span class="built_in">command</span> below will allow PHP <span class="built_in">source</span> to use those <span class="number">64</span> libs files.</span>
-<span class="line"></span>
-<span class="line">```sh</span>
-<span class="line">--with-libdir=/lib/x86_64-linux-gnu \</span>
+</pre></td></tr></table></figure>
+<p><strong>Important notes:</strong></p>
+<ol>
+<li>I used a 64bits architecture OS. The command below will allow PHP source to use those 64 libs files.</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">--with-libdir=/lib/x86_64-linux-gnu \</span>
 </pre></td></tr></table></figure>
 <ol>
 <li>To install with FreeTDS support, you must add the following param:</li>
@@ -501,7 +494,7 @@ ga('send', 'pageview');
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://ericmaicon.com.br/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/" data-id="ci8m610e400192vl0fyqjj197" class="article-share-link">Share</a>
+        <a data-url="http://ericmaicon.com.br/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/" data-id="ci8m6actl00194vl0l4vawqza" class="article-share-link">Share</a>
         
           <a href="http://ericmaicon.com.br/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/#comments" class="article-comment-link">Comments</a>
         
