@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Eric Maicon</title>
+  <title>Killing the audio process in a Mac OS | Eric Maicon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A Full Stack developer who lives in Goiânia - Brazil and love challenge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Eric Maicon">
-<meta property="og:url" content="http://ericmaicon.com.br/categories/Java/index.html">
+  <meta name="description" content="Did your audio leak and don’t you know what to do in your MacOS? I had a problem where I was coding and suddenly the audio leaked and stopped. It happened several times a day, so the restart process w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Killing the audio process in a Mac OS">
+<meta property="og:url" content="http://ericmaicon.com.br/2015/04/17/Killing-the-audio-process-in-a-Mac-OS/index.html">
 <meta property="og:site_name" content="Eric Maicon">
-<meta property="og:description" content="A Full Stack developer who lives in Goiânia - Brazil and love challenge">
+<meta property="og:description" content="Did your audio leak and don’t you know what to do in your MacOS? I had a problem where I was coding and suddenly the audio leaked and stopped. It happened several times a day, so the restart process w">
+<meta property="og:image" content="/thumbnails/apple.php">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric Maicon">
-<meta name="twitter:description" content="A Full Stack developer who lives in Goiânia - Brazil and love challenge">
+<meta name="twitter:title" content="Killing the audio process in a Mac OS">
+<meta name="twitter:description" content="Did your audio leak and don’t you know what to do in your MacOS? I had a problem where I was coding and suddenly the audio leaked and stopped. It happened several times a day, so the restart process w">
 
   
   
@@ -99,93 +100,57 @@ ga('send', 'pageview');
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-category"></i>category : <em class="page-title-link">Java</em></h1>
+              <h1 class="header"><a class="page-title-link" href="/categories/MacOS/">MacOS</a></h1>
             </div>
             <div class="main-body-content">
               
-  
-  
-    
-    
+  <article id="post-Killing-the-audio-process-in-a-Mac-OS" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year"><i class="icon" id="icon-calendar-o"></i>2015</a>
-        </div>
-        <div class="archives">
-    
-    
-    
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/02/16/Maven-useful-links/" class="thumbnail">
+        <header class="article-header">
+          
   
-    <span style="background-image:url(/thumbnails/maven.jpg
-)" alt="Maven useful links" class="thumbnail-image"></span>
+    <h1 class="article-title" itemprop="name">
+      Killing the audio process in a Mac OS
+    </h1>
   
 
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2015/04/17/Killing-the-audio-process-in-a-Mac-OS/" class="article-date">
+  <time datetime="2015-04-17T21:01:06.000Z" itemprop="datePublished">17/04/2015</time>
 </a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-        <p class="date"><time datetime="2015-02-17T00:57:06.000Z" itemprop="datePublished">16/02/2015</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/02/16/Maven-useful-links/" class="title">Maven useful links</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-Sometimes it is so hard to start a project without any reference. When I start to study something, I always create a document with every useful website to use it later.
-You may see below some links t
       </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="/thumbnails/apple.php" alt="MacOS"></p>
+<p>Did your audio leak and don’t you know what to do in your MacOS? I had a problem where I was coding and suddenly the audio leaked and stopped. It happened several times a day, so the restart process would not be a good approach.</p>
+<p>If you know how to use the terminal in a MacOS, you can use the following command to kill the process and start to listen again:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">kill</span> -<span class="number">9</span> `ps ax|grep <span class="string">'coreaudio[a-z]'</span> | awk <span class="string">'&#123;print $1&#125;’`</span></span>
+</pre></td></tr></table></figure>
+<p>It will request your password. After that, the audio would work again.</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://ericmaicon.com.br/2015/04/17/Killing-the-audio-process-in-a-Mac-OS/" data-id="ci8m5vbu600111el0lae7tbw7" class="article-share-link">Share</a>
+        
+          <a href="http://ericmaicon.com.br/2015/04/17/Killing-the-audio-process-in-a-Mac-OS/#comments" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MacOS/">MacOS</a></li></ul>
+
+      </footer>
     </div>
   </article>
-
-    
   
-    
-    
-    
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      <a href="/2015/02/16/Jersey-useful-links/" class="thumbnail">
-  
-    <span style="background-image:url(/thumbnails/jersey.jpg
-)" alt="Jersey useful links" class="thumbnail-image"></span>
-  
-
-</a>
-      <div class="article-meta">
-        <p class="category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-        <p class="date"><time datetime="2015-02-17T00:57:06.000Z" itemprop="datePublished">16/02/2015</time></p>
+    <section id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
-      <h2 class="article-title">
-        <a href="/2015/02/16/Jersey-useful-links/" class="title">Jersey useful links</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        
-I started to do a REST architecture and I looked around to a framework in Java to help me with. Sometimes it is so hard to start with a new framework without any reference.
-You may check below a list
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
+    </section>
   
-  
-    </div></section>
-  
-
-
 
             </div>
           </section>
@@ -205,6 +170,29 @@ You may check below a list
       
     </ul>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <p class="article-nav-title">
+        
+          Installing Nginx, PHP and PHP-FPM from source
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/2015/04/17/Listing-10-biggest-files-in-specific-folder-on-linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <p class="article-nav-title">Listing 10 biggest files in a specific folder on linux</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
   
   <div class="widgets-container">
     
@@ -252,11 +240,13 @@ You may check below a list
 <script>
   var disqus_shortname = 'ericmaicon';
   
+  var disqus_url = 'http://ericmaicon.com.br/2015/04/17/Killing-the-audio-process-in-a-Mac-OS/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
