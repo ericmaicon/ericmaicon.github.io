@@ -240,11 +240,17 @@ ga('send', 'pageview');
 <span class="line">5</span>
 <span class="line">6</span>
 </pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/src</span>
-<span class="line">wget http://www.openssl.org/<span class="built_in">source</span>/openssl-<span class="number">0.9</span>.<span class="number">8</span>k.tar.gz</span>
-<span class="line">tar zxvf openssl-<span class="number">0.9</span>.<span class="number">8</span>k.tar.gz</span>
-<span class="line"><span class="built_in">cd</span> openssl-<span class="number">0.9</span>.<span class="number">8</span>k</span>
-<span class="line">./config shared --prefix=/usr --openssldir=/usr/ssl no-asm</span>
+<span class="line">wget http://www.openssl.org/<span class="built_in">source</span>/openssl-<span class="number">1.0</span>.<span class="number">1</span>g.tar.gz</span>
+<span class="line">tar zxvf openssl-<span class="number">1.0</span>.<span class="number">1</span>g.tar.gz</span>
+<span class="line"><span class="built_in">cd</span> openssl-<span class="number">1.0</span>.<span class="number">1</span>g</span>
+<span class="line">./config --prefix=/usr/<span class="built_in">local</span>/openssl --openssldir=/usr/<span class="built_in">local</span>/openssl</span>
 <span class="line">make &amp;&amp; make install</span>
+</pre></td></tr></table></figure>
+<p>If you want to check the installation, you can run the follow command:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+</pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/openssl/bin/openssl version</span>
+<span class="line">OpenSSL <span class="number">1.0</span>.<span class="number">1</span>g <span class="number">7</span> Apr <span class="number">2014</span></span>
 </pre></td></tr></table></figure>
 <h4 id="Free_Type">Free Type</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
@@ -253,7 +259,7 @@ ga('send', 'pageview');
 <span class="line">5</span>
 <span class="line">6</span>
 </pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/src</span>
-<span class="line">wget http://download.savannah.gnu.org/releases/freetype/freetype-<span class="number">2.5</span>.<span class="number">3</span>.tar.gz</span>
+<span class="line">wget http://download.videolan.org/contrib/freetype-<span class="number">2.5</span>.<span class="number">3</span>.tar.gz</span>
 <span class="line">tar zxvf freetype-<span class="number">2.5</span>.<span class="number">3</span>.tar.gz</span>
 <span class="line"><span class="built_in">cd</span> freetype-<span class="number">2.5</span>.<span class="number">3</span></span>
 <span class="line">./configure</span>
@@ -279,7 +285,7 @@ ga('send', 'pageview');
 <span class="line">5</span>
 <span class="line">6</span>
 </pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/src</span>
-<span class="line">wget ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/libpng-<span class="number">1.6</span>.<span class="number">16</span>.tar.gz</span>
+<span class="line">wget http://<span class="number">78.108</span>.<span class="number">103.11</span>/MIRROR/ftp/png/src/<span class="built_in">history</span>/libpng16/libpng-<span class="number">1.6</span>.<span class="number">16</span>.tar.gz</span>
 <span class="line">tar zxvf libpng-<span class="number">1.6</span>.<span class="number">16</span>.tar.gz</span>
 <span class="line"><span class="built_in">cd</span> libpng-<span class="number">1.6</span>.<span class="number">16</span></span>
 <span class="line">./configure</span>
@@ -305,7 +311,7 @@ ga('send', 'pageview');
 <span class="line">5</span>
 <span class="line">6</span>
 </pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/src</span>
-<span class="line">wget http://softlayer.dl.sourceforge.net/sourceforge/mcrypt/libmcrypt-<span class="number">2.5</span>.<span class="number">8</span>.tar.gz</span>
+<span class="line">wget https://vps.googlecode.com/files/libmcrypt-<span class="number">2.5</span>.<span class="number">8</span>.tar.gz</span>
 <span class="line">tar -zxvf libmcrypt-<span class="number">2.5</span>.<span class="number">8</span>.tar.gz</span>
 <span class="line"><span class="built_in">cd</span> libmcrypt-<span class="number">2.5</span>.<span class="number">8</span></span>
 <span class="line">./configure --prefix=/usr/<span class="built_in">local</span>  --disable-posix-threads --enable-dynamic-loading</span>
@@ -406,6 +412,12 @@ ga('send', 'pageview');
 </pre></td><td class="code"><pre><span class="line">error: Cannot <span class="keyword">find</span> MySQL header files under <span class="regexp">/usr/i</span>nclude<span class="regexp">/mysql.</span></span>
 </pre></td></tr></table></figure>
 <p>You can fix this installing the mysql-dev package.</p>
+<p><strong>CentOS</strong>:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">yum install mysql-devel</span>
+</pre></td></tr></table></figure></p>
+<p><strong>Debian</strong>:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">aptitude install libmysqld-dev</span>
+</pre></td></tr></table></figure></p>
 <p>After that, if your configure command runned with success, you are able to run the make command:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span>
 </pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span>
@@ -494,7 +506,7 @@ ga('send', 'pageview');
 
       </div>
       <footer class="article-footer">
-        <a data-url="http://ericmaicon.com.br/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/" data-id="ci8m6d9b600195hl0ehv90n0e" class="article-share-link">Share</a>
+        <a data-url="http://ericmaicon.com.br/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/" data-id="cib5ockag001rjil0ew60n7zh" class="article-share-link">Share</a>
         
           <a href="http://ericmaicon.com.br/2015/04/17/Installing-Nginx-PHP-and-PHP-FPM-from-source/#comments" class="article-comment-link">Comments</a>
         
@@ -560,7 +572,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-list">
     <h3 class="widget-title">categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MacOS/">MacOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Presta-Shop/">Presta Shop</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime-Text/">Sublime Text</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Virtualbox/">Virtualbox</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MacOS/">MacOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Presta-Shop/">Presta Shop</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SVN/">SVN</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sublime-Text/">Sublime Text</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Virtualbox/">Virtualbox</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -570,7 +582,7 @@ ga('send', 'pageview');
   <div class="widget-wrap widget-float">
     <h3 class="widget-title">tag cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 20px;">Java</a><a href="/tags/Linux/" style="font-size: 20px;">Linux</a><a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a><a href="/tags/Node/" style="font-size: 10px;">Node</a><a href="/tags/PHP/" style="font-size: 10px;">PHP</a><a href="/tags/Presta-Shop/" style="font-size: 20px;">Presta Shop</a><a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a><a href="/tags/Virtualbox/" style="font-size: 20px;">Virtualbox</a>
+      <a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Java/" style="font-size: 15px;">Java</a><a href="/tags/Linux/" style="font-size: 20px;">Linux</a><a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a><a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a><a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a><a href="/tags/Node/" style="font-size: 10px;">Node</a><a href="/tags/PHP/" style="font-size: 15px;">PHP</a><a href="/tags/Presta-Shop/" style="font-size: 15px;">Presta Shop</a><a href="/tags/SVN/" style="font-size: 10px;">SVN</a><a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a><a href="/tags/Virtualbox/" style="font-size: 15px;">Virtualbox</a>
     </div>
   </div>
 
