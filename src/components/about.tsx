@@ -14,7 +14,6 @@ const stats = [
     number: '3',
     label: 'Teams',
     sublabel: 'Led',
-    suffix: '+',
   },
 ];
 

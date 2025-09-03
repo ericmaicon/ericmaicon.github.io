@@ -23,8 +23,10 @@ export default function Hero() {
             </div>
 
             <div className="flex gap-4">
-              <Button size="lg" variant="secondary">
-                Got a project?
+              <Button size="lg" variant="secondary" asChild>
+                <a href="mailto:eric@ericmaicon.com.br" target="_blank" rel="noopener noreferrer">
+                  Got a project?
+                </a>
               </Button>
             </div>
           </div>

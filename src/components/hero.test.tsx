@@ -10,7 +10,7 @@ describe('Hero Component', () => {
     expect(screen.getByText("I'm Eric")).toBeInTheDocument();
     expect(screen.getByText('Lead Fullstack Developer')).toBeInTheDocument();
 
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('link');
     expect(button).toBeInTheDocument();
 
     const skills = [
