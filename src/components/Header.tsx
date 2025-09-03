@@ -1,7 +1,7 @@
 export default function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element!.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -16,19 +16,19 @@ export default function Header() {
             Home
           </button>
           <button
-            onClick={() => scrollToSection('sobre')}
+            onClick={() => scrollToSection('about')}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             About
           </button>
           <button
-            onClick={() => scrollToSection('servicos')}
+            onClick={() => scrollToSection('tech')}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Technologies
           </button>
           <button
-            onClick={() => scrollToSection('contato')}
+            onClick={() => scrollToSection('contact')}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Contact

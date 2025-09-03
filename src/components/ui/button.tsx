@@ -54,3 +54,5 @@ function Button({
 }
 
 export default Button;
+
+export { buttonVariants };

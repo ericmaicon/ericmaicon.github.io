@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Header from './components/header';
 // import HeroSection from './components/HeroSection'
 // import ServicesSection from './components/ServicesSection'
 // import AboutSection from './components/AboutSection'
