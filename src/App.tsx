@@ -1,21 +1,19 @@
-import Header from './components/header';
-// import HeroSection from './components/HeroSection'
-// import ServicesSection from './components/ServicesSection'
-// import AboutSection from './components/AboutSection'
-// import ContactSection from './components/ContactSection'
-// import Footer from './components/Footer'
+import Hero from './components/hero';
+import Services from './components/services';
+import About from './components/about';
+import Contact from './components/contact';
+import Footer from './components/footer';
 
 function App() {
   return (
-    <div className="bg-background min-h-screen">
-      <Header />
-      {/* <main>
-        <HeroSection />
-        <ServicesSection />
-        <AboutSection />
-        <ContactSection />
-    </main>
-    <Footer /> */}
+    <div className="bg-primary min-h-screen">
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

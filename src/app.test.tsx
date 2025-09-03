@@ -6,6 +6,6 @@ describe('App', () => {
   it('renders the app', () => {
     render(<App />);
 
-    expect(screen.getByText('Eric Maicon')).toBeInTheDocument();
+    expect(screen.getByText("I'm Eric")).toBeInTheDocument();
   });
 });

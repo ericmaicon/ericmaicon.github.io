@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Button, { buttonVariants } from './button';
+import { Button, buttonVariants } from './button';
 
 describe('Button Component', () => {
   it('renders default button correctly', () => {
@@ -13,13 +13,10 @@ describe('Button Component', () => {
   });
 
   it.each([
-    ['default', 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90'],
+    ['default', 'text-gray-400 shadow-xs hover:text-white'],
     ['destructive', 'bg-destructive text-white'],
-    [
-      'outline',
-      'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
-    ],
-    ['secondary', 'bg-secondary text-secondary-foreground'],
+    ['outline', 'border bg-primary shadow-xs hover:bg-primary/20 text-white'],
+    ['secondary', 'bg-secondary-400 text-white shadow-xs hover:bg-secondary-500'],
     ['ghost', 'hover:bg-accent hover:text-accent-foreground'],
     ['link', 'text-primary underline-offset-4'],
   ])('applies correct variant classes for %s', (variant, expectedClasses) => {
