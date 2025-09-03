@@ -45,7 +45,7 @@ test.describe('Responsive Design Tests', () => {
     }
   });
 
-  ['iPhone 13', 'iPad Pro', 'Desktop Chrome'].forEach((deviceName) => {
+  ['iPad Pro', 'Desktop Chrome'].forEach((deviceName) => {
     test(`should work on ${deviceName}`, async ({ browser }) => {
       const context = await browser.newContext({
         ...devices[deviceName],

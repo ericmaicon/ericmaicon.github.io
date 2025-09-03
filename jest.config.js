@@ -14,7 +14,7 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-
+  testPathIgnorePatterns: ['<rootDir>/tests/'],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',

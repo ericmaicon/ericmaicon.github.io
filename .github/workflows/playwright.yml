@@ -23,7 +23,7 @@ jobs:
           echo $! > playwright.pid
           npx wait-on http://localhost:5173
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npm run test:e2e
       - name: Stop development server
         if: always()
         run: |
