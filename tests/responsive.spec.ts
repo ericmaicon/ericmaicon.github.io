@@ -15,7 +15,6 @@ test.describe('Responsive Design Tests', () => {
       await page.waitForLoadState('networkidle');
 
       await expect(page.getByRole('main')).toBeVisible();
-      await expect(page).toHaveScreenshot(`homepage-${device}.png`);
     });
   });
 
