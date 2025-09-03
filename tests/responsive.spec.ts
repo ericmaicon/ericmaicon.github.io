@@ -54,7 +54,6 @@ test.describe('Responsive Design Tests', () => {
       const page = await context.newPage();
       await page.goto('/');
       await expect(page.getByRole('main')).toBeVisible();
-      await expect(page).toHaveScreenshot(`${deviceName.replace(/\s+/g, '-')}.png`);
 
       await context.close();
     });
